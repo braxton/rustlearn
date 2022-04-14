@@ -282,7 +282,7 @@ impl Hyperparameters {
     }
 }
 
-#[derive(Serialize, Deserialize, Clone)]
+#[derive(Serialize, Deserialize, Clone, Debug)]
 pub enum Node {
     Interior {
         feature: usize,
