@@ -192,7 +192,7 @@ impl FeatureValues {
 }
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
-enum FeatureType {
+pub enum FeatureType {
     Constant,
     Binary,
     Continuous,
