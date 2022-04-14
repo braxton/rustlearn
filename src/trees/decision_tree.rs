@@ -283,7 +283,7 @@ impl Hyperparameters {
 }
 
 #[derive(Serialize, Deserialize, Clone)]
-enum Node {
+pub enum Node {
     Interior {
         feature: usize,
         threshold: f32,
@@ -297,15 +297,15 @@ enum Node {
 /// A two-class decision tree.
 #[derive(Serialize, Deserialize, Clone)]
 pub struct DecisionTree {
-    dim: usize,
+    pub dim: usize,
 
-    max_features: usize,
-    max_depth: usize,
-    min_samples_split: usize,
+    pub max_features: usize,
+    pub max_depth: usize,
+    pub min_samples_split: usize,
 
-    root: Option<Node>,
-    feature_types: Vec<FeatureType>,
-    rng: EncodableRng,
+    pub root: Option<Node>,
+    pub feature_types: Vec<FeatureType>,
+    pub rng: EncodableRng,
 }
 
 impl<'a> SupervisedModel<&'a Array> for DecisionTree {
